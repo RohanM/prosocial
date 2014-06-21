@@ -1,6 +1,6 @@
-@fblite = angular.module('fblite', ['ngRoute'])
+@prosocial = angular.module('prosocial', ['ngRoute'])
 
-@fblite.config ($routeProvider) ->
+@prosocial.config ($routeProvider) ->
   $routeProvider.
     otherwise({
       templateUrl: '/events',

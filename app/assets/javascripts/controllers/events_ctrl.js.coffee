@@ -1,2 +1,2 @@
-@fblite.controller 'EventsCtrl', ($scope) ->
+@prosocial.controller 'EventsCtrl', ($scope) ->
   $scope.hello = "World"
