@@ -35,6 +35,13 @@ testAPI = ->
     console.log "Successful login for: " + response.name
     document.getElementById("status").innerHTML = "Thanks for logging in, #{response.name}!"
 
+    FB.api "/#{response.id}/events", (response) ->
+      $("#events").append("<ul>");
+      for event in response.data
+        $("#events").append("<li>#{event.name}</li>");
+      $("#events").append("</ul>");
+      $("#events").show();
+
 window.fbAsyncInit = ->
   FB.init
     appId: "431196430356878"
