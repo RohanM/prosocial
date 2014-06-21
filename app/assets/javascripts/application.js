@@ -15,6 +15,7 @@
 
 //= require angular
 //= require angular-route
+//= require angular-facebook
 //= require prosocial
 
 //= require_tree .

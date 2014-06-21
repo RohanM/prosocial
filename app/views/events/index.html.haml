@@ -1,8 +1,10 @@
-/
-  Below we include the Login Button social plugin. This button uses
-  the JavaScript SDK to present a graphical Login button that triggers
-  the FB.login() function when clicked.
-%fb:login-button{onlogin: "checkLoginState();", scope: "public_profile,email,user_events"}
-#status
+%div
+  .alert{"ng-show" => "salutation"} Hello, {{user.name}}
+  .alert{"ng-show" => "byebye"} Bye bye :'(
 
-#events{style: "display: none;"}
+%button{"type" => "button", "ng-show" => "!logged_in", "ng-disabled" => "!facebookReady", "ng-click" => "IntentLogin()"} Login with Facebook
+%button{"type" => "button", "ng-show" => "logged_in", "ng-disabled" => "!facebookReady", "ng-click" => "logout()"} Logout
+
+%h2 Events
+%ul
+  %li{"ng-repeat" => "event in events"} {{ event.name }}
