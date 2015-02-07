@@ -1,23 +1,23 @@
-@prosocial.controller 'EventsCtrl', ($scope, $timeout, Facebook) ->
+@prosocial.controller 'EventsCtrl', ($scope, Facebook) ->
   $scope.user = {}
   $scope.events = []
   $scope.logged_in = false;
 
   $scope.$watch (->
     Facebook.isReady()
-  ), (newVal) ->
-    if newVal
+  ), (isReady) ->
+    if isReady
       $scope.facebookReady = true
-      $scope.displayLoggedIn()
+      $scope.afterLogin()
 
-  $scope.displayLoggedIn = ->
+  $scope.afterLogin = ->
     Facebook.getLoginStatus (response) ->
       if response.status == "connected"
         $scope.logged_in = true
-        $scope.me()
+        $scope.loadData()
 
 
-  $scope.me = ->
+  $scope.loadData = ->
     Facebook.api "/me", (response) ->
       $scope.$apply ->
         $scope.user = response

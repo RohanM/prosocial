@@ -3,14 +3,14 @@
 
   $scope.$watch (->
     Facebook.isReady()
-  ), (newVal) ->
-    $scope.facebookReady = true  if newVal
+  ), (isReady) ->
+    $scope.facebookReady = true  if isReady
 
 
-  $scope.IntentLogin = ->
+  $scope.startLogin = ->
     Facebook.getLoginStatus (response) ->
       if response.status == "connected"
-        $scope.displayLoggedIn()
+        $scope.afterLogin()
       else
         $scope.login()
 
@@ -18,8 +18,8 @@
   $scope.login = ->
     Facebook.login (response) ->
       if response.status == "connected"
-        $scope.displayLoggedIn()
+        $scope.afterLogin()
 
 
-  $scope.displayLoggedIn = ->
+  $scope.afterLogin = ->
     $location.path "/events"
