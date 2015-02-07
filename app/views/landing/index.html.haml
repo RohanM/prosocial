@@ -1,2 +1,18 @@
-%button{"type" => "button", "ng-show" => "!logged_in", "ng-disabled" => "!facebookReady", "ng-click" => "startLogin()"} Login with Facebook
-%button{"type" => "button", "ng-show" => "logged_in", "ng-disabled" => "!facebookReady", "ng-click" => "logout()"} Logout
+.row.title
+  .large-3.columns &nbsp;
+  .large-6.columns.text-center
+    %h1 Prosocial
+  .large-3.columns &nbsp;
+
+.row.callout
+  .large-3.columns &nbsp;
+  .large-6.columns.text-center
+    %em adj.
+    relating to or denoting behaviour which is positive, helpful, and intended to promote social acceptance and friendship
+  .large-3.columns &nbsp;
+
+.row.login
+  .large-3.columns &nbsp;
+  .large-6.columns.text-center
+    %button{"type" => "button", "ng-show" => "!logged_in", "ng-disabled" => "!facebookReady", "ng-click" => "startLogin()"} Login with Facebook
+  .large-3.columns &nbsp;
