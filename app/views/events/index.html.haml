@@ -1,3 +1,16 @@
-%h2 Events - {{ user.name }}
-%ul
-  %li{"ng-repeat" => "event in events"} {{ event.start_time|date:"d-M-yyyy" }} - {{ event.name }}
+.icon-bar.six-up.label-right
+  %a.item{"href" => "#/events"}
+    %i.fi-calendar
+    %label Events
+  %a.item.right{"ng-click" => "logout()"}
+    %i.fi-unlock
+    %label Log out
+
+.row
+  .large-12.columns
+    %h2 Events - {{ user.name }}
+
+.row
+  .large-12.columns
+    %ul
+      %li{"ng-repeat" => "event in events"} {{ event.start_time|date:"d-M-yyyy" }} - {{ event.name }}

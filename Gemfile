@@ -5,11 +5,13 @@ gem 'fb_graph'
 gem 'rails', '4.1.1'
 gem 'sqlite3'
 
-gem 'foundation-rails', '~> 5.5.0'
 gem 'sass-rails'
 gem 'haml'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
+
+gem 'foundation-rails', '~> 5.5.0'
+gem 'foundation-icons-sass-rails'
 
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
