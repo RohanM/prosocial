@@ -15,7 +15,9 @@
     %img{"ng-src" => "{{ event.picture_url }}"}
   .large-10.columns
     %h3 {{ event.name }}
-    -# TODO: relative time
-    %p ({{ event.start_time|date:"d MMMM" }})
-    %p {{ event.location }}
+    .start-time
+      {{ event.start_time|amDateFormat:"Do MMMM" }}
+      = surround '(', ')' do
+        %span{"am-time-ago" => "event.start_time"}
+    .location {{ event.location }}
     -#%p {{ event.rsvp_status }}

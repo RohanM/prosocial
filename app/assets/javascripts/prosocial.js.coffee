@@ -1,4 +1,4 @@
-@prosocial = angular.module('prosocial', ['ngRoute', 'facebook'])
+@prosocial = angular.module('prosocial', ['ngRoute', 'facebook', 'angularMoment'])
 
 @prosocial.config ($routeProvider, FacebookProvider) ->
   $routeProvider.

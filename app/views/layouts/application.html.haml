@@ -7,8 +7,12 @@
     %title= content_for?(:title) ? yield(:title) : "Prosocial"
 
     = stylesheet_link_tag    "application"
+
     = javascript_include_tag "vendor/modernizr"
     = javascript_include_tag "application"
+    = javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"
+    = javascript_include_tag "https://cdn.jsdelivr.net/angular.moment/0.9.0/angular-moment.min.js"
+
     = csrf_meta_tags
 
   %body{"ng-app" => "prosocial"}
