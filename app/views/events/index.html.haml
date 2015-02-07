@@ -10,10 +10,10 @@
   .large-12.columns
     %h2 Events - {{ user.name }}
 
-.row{"ng-repeat" => "event in events"}
-  .large-3.columns
-    %img{"ng-src" => "{{ event.picture.source }}"}
-  .large-9.columns
+.row.event{"ng-repeat" => "event in events"}
+  .large-2.columns
+    %img{"ng-src" => "{{ event.picture_url }}"}
+  .large-10.columns
     %h3 {{ event.name }}
     -# TODO: relative time
     %p ({{ event.start_time|date:"d MMMM" }})

@@ -27,10 +27,16 @@
     Facebook.api "/me", (response) ->
       $scope.$apply ->
         $scope.user = response
-
+        # Fetching additional fields:
+        # ?fields=id,cover,location,name,start_time
         Facebook.api "/#{$scope.user.id}/events", (response) ->
           $scope.events = response.data;
+          $scope.loadEvent(event) for event in $scope.events
 
+
+  $scope.loadEvent = (event) ->
+    Facebook.api "/#{event.id}/picture?type=normal", (response) ->
+      event.picture_url = response.data.url
 
   $scope.logout = ->
     Facebook.logout ->
