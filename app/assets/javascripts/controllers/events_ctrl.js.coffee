@@ -2,8 +2,6 @@
   $scope.user = {}
   $scope.events = []
   $scope.logged_in = false;
-  $scope.byebye = false;
-  $scope.salutation = false;
 
   $scope.$watch (->
     Facebook.isReady()
@@ -14,8 +12,6 @@
 
   $scope.displayLoggedIn = ->
     $scope.logged_in = true
-    $scope.salutation = true
-    $scope.byebye = false
     $scope.me()
 
 
@@ -34,10 +30,3 @@
         $scope.user = {}
         $scope.events = []
         $scope.logged_in = false
-        $scope.salutation = false
-        $scope.byebye = true
-
-        # Dismiss byebye message after two seconds
-        $timeout (->
-          $scope.byebye = false
-        ), 2000

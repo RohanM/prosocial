@@ -1,8 +1,6 @@
 @prosocial.controller 'LandingCtrl', ($scope, $location, Facebook) ->
   $scope.user = {}
   $scope.logged_in = false;
-  $scope.byebye = false;
-  $scope.salutation = false;
 
   $scope.$watch (->
     Facebook.isReady()
