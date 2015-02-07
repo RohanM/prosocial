@@ -1,4 +1,4 @@
-@prosocial.controller 'EventsCtrl', ($scope, Facebook) ->
+@prosocial.controller 'EventsCtrl', ($scope, $location, Facebook) ->
   $scope.user = {}
   $scope.events = []
   $scope.logged_in = false;
@@ -15,6 +15,12 @@
       if response.status == "connected"
         $scope.logged_in = true
         $scope.loadData()
+      else
+        $scope.afterLogout()
+
+
+  $scope.afterLogout = ->
+    $location.path "/"
 
 
   $scope.loadData = ->
@@ -32,3 +38,4 @@
         $scope.user = {}
         $scope.events = []
         $scope.logged_in = false
+        $scope.afterLogout()
