@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require foundation
 
 //= require angular
 //= require angular-route
@@ -19,3 +20,5 @@
 //= require prosocial
 
 //= require_tree .
+
+$(function(){ $(document).foundation(); });
