@@ -8,28 +8,15 @@
   $scope.$watch (->
     Facebook.isReady()
   ), (newVal) ->
-    $scope.facebookReady = true  if newVal
-
-
-  $scope.IntentLogin = ->
-    Facebook.getLoginStatus (response) ->
-      if response.status == "connected"
-        $scope.displayLoggedIn()
-      else
-        $scope.login()
-
-
-  $scope.login = ->
-    Facebook.login (response) ->
-      if response.status == "connected"
-        $scope.displayLoggedIn()
-
+    if newVal
+      $scope.facebookReady = true
+      $scope.displayLoggedIn()
 
   $scope.displayLoggedIn = ->
-        $scope.logged_in = true
-        $scope.salutation = true
-        $scope.byebye = false
-        $scope.me()
+    $scope.logged_in = true
+    $scope.salutation = true
+    $scope.byebye = false
+    $scope.me()
 
 
   $scope.me = ->
@@ -54,4 +41,3 @@
         $timeout (->
           $scope.byebye = false
         ), 2000
-

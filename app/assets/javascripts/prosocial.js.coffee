@@ -2,9 +2,13 @@
 
 @prosocial.config ($routeProvider, FacebookProvider) ->
   $routeProvider.
-    otherwise({
+    when('/events', {
       templateUrl: '/events',
       controller: 'EventsCtrl'
+    }).
+    otherwise({
+      templateUrl: '/landing',
+      controller: 'LandingCtrl'
     })
 
   FacebookProvider.init("431196430356878")

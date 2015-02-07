@@ -1,10 +1,3 @@
-%div
-  .alert{"ng-show" => "salutation"} Hello, {{user.name}}
-  .alert{"ng-show" => "byebye"} Bye bye :'(
-
-%button{"type" => "button", "ng-show" => "!logged_in", "ng-disabled" => "!facebookReady", "ng-click" => "IntentLogin()"} Login with Facebook
-%button{"type" => "button", "ng-show" => "logged_in", "ng-disabled" => "!facebookReady", "ng-click" => "logout()"} Logout
-
 %h2 Events
 %ul
   %li{"ng-repeat" => "event in events"} {{ event.start_time|date:"d-M-yyyy" }} - {{ event.name }}
