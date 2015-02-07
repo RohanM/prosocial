@@ -1,5 +1,4 @@
 @prosocial.controller 'LandingCtrl', ($scope, $location, Facebook) ->
-  $scope.user = {}
   $scope.logged_in = false;
 
   $scope.$watch (->

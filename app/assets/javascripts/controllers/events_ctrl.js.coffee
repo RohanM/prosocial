@@ -11,8 +11,10 @@
       $scope.displayLoggedIn()
 
   $scope.displayLoggedIn = ->
-    $scope.logged_in = true
-    $scope.me()
+    Facebook.getLoginStatus (response) ->
+      if response.status == "connected"
+        $scope.logged_in = true
+        $scope.me()
 
 
   $scope.me = ->
