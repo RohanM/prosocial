@@ -16,9 +16,11 @@
 
 .row.event{ng: {repeat: 'event in events|orderBy:"start_time"', show: "!dayPast(event.start_time) || show_past_events"}}
   .large-2.columns
-    %img{"ng-src" => "{{ event.picture_url }}"}
+    %a{href: "https://facebook.com/events/{{ event.id }}"}
+      %img{"ng-src" => "{{ event.picture_url }}"}
   .large-10.columns
-    %h3 {{ event.name }}
+    %h3
+      %a{href: "https://facebook.com/events/{{ event.id }}"} {{ event.name }}
     .start-time
       {{ event.start_time|amDateFormat:"Do MMMM" }}
       = surround '(', ')' do
