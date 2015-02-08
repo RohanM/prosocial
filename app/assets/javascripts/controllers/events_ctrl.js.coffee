@@ -11,6 +11,7 @@
       $scope.facebookReady = true
       $scope.afterLogin()
 
+
   $scope.afterLogin = ->
     Facebook.getLoginStatus (response) ->
       if response.status == "connected"
@@ -39,12 +40,15 @@
     Facebook.api "/#{event.id}/picture?type=normal", (response) ->
       event.picture_url = response.data.url
 
+
   $scope.togglePastEvents = ->
     $scope.show_past_events = !$scope.show_past_events
+
 
   $scope.eventPast = (event) ->
     end_time = if event.end_time? then event.end_time else event.start_time
     new Date(end_time) < new Date()
+
 
   $scope.logout = ->
     Facebook.logout ->
