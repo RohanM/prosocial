@@ -42,8 +42,9 @@
   $scope.togglePastEvents = ->
     $scope.show_past_events = !$scope.show_past_events
 
-  $scope.dayPast = (time) ->
-    new Date(time) < new Date()
+  $scope.eventPast = (event) ->
+    end_time = if event.end_time? then event.end_time else event.start_time
+    new Date(end_time) < new Date()
 
   $scope.logout = ->
     Facebook.logout ->

@@ -14,7 +14,7 @@
         %i.fi-minus
         Hide past events
 
-.row.event{ng: {repeat: 'event in events|orderBy:"start_time"', show: "!dayPast(event.start_time) || show_past_events"}}
+.row.event{ng: {repeat: 'event in events|orderBy:"start_time"', show: "!eventPast(event) || show_past_events"}}
   .large-2.columns
     %a{href: "https://facebook.com/events/{{ event.id }}"}
       %img{"ng-src" => "{{ event.picture_url }}"}
