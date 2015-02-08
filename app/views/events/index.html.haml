@@ -10,7 +10,17 @@
   .large-12.columns
     %h2 Events - {{ user.name }}
 
-.row.event{"ng-repeat" => "event in events"}
+.row
+  .large-12.columns
+    %a{ng: {click: "togglePastEvents()"}}
+      %span{ng: {hide: "show_past_events"}}
+        %i.fi-plus
+        Show past events
+      %span{ng: {show: "show_past_events"}}
+        %i.fi-minus
+        Hide past events
+
+.row.event{ng: {repeat: 'event in events|orderBy:"start_time"', show: "!dayPast(event.start_time) || show_past_events"}}
   .large-2.columns
     %img{"ng-src" => "{{ event.picture_url }}"}
   .large-10.columns

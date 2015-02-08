@@ -2,6 +2,7 @@
   $scope.user = {}
   $scope.events = []
   $scope.logged_in = false;
+  $scope.show_past_events = false
 
   $scope.$watch (->
     Facebook.isReady()
@@ -37,6 +38,12 @@
   $scope.loadEvent = (event) ->
     Facebook.api "/#{event.id}/picture?type=normal", (response) ->
       event.picture_url = response.data.url
+
+  $scope.togglePastEvents = ->
+    $scope.show_past_events = !$scope.show_past_events
+
+  $scope.dayPast = (time) ->
+    new Date(time) < new Date()
 
   $scope.logout = ->
     Facebook.logout ->
