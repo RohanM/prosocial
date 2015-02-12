@@ -1,8 +1,8 @@
 ## webapp
 
-webserver_name: spree.ryanbigg.com
-deploy_directory: /data/spree
-app_name: spree
+webserver_name: prosocial.yaycode.net
+deploy_directory: /home/prosocial/app
+app_name: prosocial
 
 ## stolen from https://github.com/jgrowl/ansible-playbook-ruby-from-src
 rubyTmpDir: /usr/local/src

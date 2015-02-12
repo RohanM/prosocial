@@ -6,7 +6,6 @@
 
   roles:
     - webserver
-    - database
 
   handlers: 
     - name: Restart puma
