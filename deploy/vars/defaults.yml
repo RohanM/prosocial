@@ -1,8 +1,9 @@
 ## webapp
 
 webserver_name: prosocial.yaycode.net
-deploy_directory: /home/prosocial/app
 app_name: prosocial
+deploy_directory: /home/{{ app_name }}/app
+
 
 ## stolen from https://github.com/jgrowl/ansible-playbook-ruby-from-src
 rubyTmpDir: /usr/local/src

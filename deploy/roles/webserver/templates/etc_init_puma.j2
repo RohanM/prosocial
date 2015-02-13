@@ -21,8 +21,8 @@ description "Puma Background Worker"
 stop on (stopping puma-manager or runlevel [06])
 
 # change apps to match your deployment user if you want to use this as a less privileged user (recommended!)
-setuid deploy
-setgid deploy
+setuid {{ app_name }}
+setgid {{ app_name }}
 
 respawn
 respawn limit 3 30

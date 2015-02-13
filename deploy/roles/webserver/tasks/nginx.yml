@@ -8,13 +8,13 @@
   command: rm -rf /etc/nginx/sites-enabled/default
 
 - name: Remove the app's symlink, if exists
-  command: rm -rf /etc/nginx/sites-enabled/prosocial
+  command: rm -rf /etc/nginx/sites-enabled/{{ app_name }}
 
 - name: Configure nginx for the app
-  template: src=etc_nginx_sites-available_prosocial.conf.j2 dest=/etc/nginx/sites-available/prosocial group=www-data owner=www-data force=yes
+  template: src=etc_nginx_sites-available_{{ app_name }}.conf.j2 dest=/etc/nginx/sites-available/{{ app_name }} group=www-data owner=www-data force=yes
 
 - name: Enable the app
-  command: ln -s /etc/nginx/sites-available/prosocial /etc/nginx/sites-enabled/prosocial
+  command: ln -s /etc/nginx/sites-available/{{ app_name }} /etc/nginx/sites-enabled/{{ app_name }}
 
 - name: Restart nginx
   action: service name=nginx state=restarted
