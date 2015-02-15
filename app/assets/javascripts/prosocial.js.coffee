@@ -11,4 +11,4 @@
       controller: 'LandingCtrl'
     })
 
-  FacebookProvider.init("431196430356878")
+  FacebookProvider.init("431195277023660")
