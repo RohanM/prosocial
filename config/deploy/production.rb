@@ -4,7 +4,7 @@
 # is considered to be the first unless any hosts have the primary
 # property set.  Don't declare `role :all`, it's a meta role.
 
-role :app, %w{prosocial@prosocial.yaycode.net}
+role :web, %w{prosocial@prosocial.yaycode.net}
 
 
 # Extended Server Syntax
